@@ -21,3 +21,4 @@ class TestForm(TestCase):
             'message': "Hi there",
         })
         self.assertFalse(form.is_valid())
+
