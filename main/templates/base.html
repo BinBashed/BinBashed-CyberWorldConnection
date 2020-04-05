@@ -12,9 +12,24 @@
     <title>MySite</title>
   </head>
   <body>
-    <h1>Welcome to the show!</h1>
-    {% block content %}
-    {% endblock %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Nicks Mind</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item {% if request.path == "/" %}active{% endif %}">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item {% if request.path == "/about-us/" %}active{% endif %}">
+        <a class="nav-link" href="about-us">About Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% block content %}
+{% endblock %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
